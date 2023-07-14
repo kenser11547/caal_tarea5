@@ -15,3 +15,30 @@ const consultarPais = async (evento) => {
     const config = {
       method: 'GET'
     };
+
+      // Consulta a la API SI SE ESTA BUSCANDO O NO
+  document.getElementById('resultado').innerText = 'Buscando el archivo que se desea...';
+  try {
+    // CONSULTA A LA API
+    const respuesta = await fetch(url, config);
+    if (respuesta.status) {
+      const data = await respuesta.json();
+      const pais = data[0];
+      console.log(pais.name.common);
+      console.log(pais.population);
+      console.log(pais.capital);
+      console.log(pais.flag);
+
+      document.getElementById('nombrePais').innerText = pais.name.common;
+      document.getElementById('poblacionPais').innerText = pais.population;
+      document.getElementById('capitalPais').innerText = pais.capital[0];
+      document.getElementById('banderaPais').src = pais.flags.png;
+      document.getElementById('resultado').innerText = 'Fue Encontrado';
+      tabla.style.display = '';
+    } else {
+      document.getElementById('resultado').innerText = 'No se encontró';
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
