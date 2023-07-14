@@ -42,3 +42,26 @@ const consultarPais = async (evento) => {
     console.log(error);
   }
 };
+//aqui se crea la consulta para la busqueda de consulta en php 
+const consultarAPI = async (e) => {
+  const url = `./consultar.php`
+  const config = {
+      method : 'GET'
+  }
+
+  try {
+      // CONSULTA A LA API
+      const resulta = await fetch(url, config);   
+      
+      const data = await resulta.text()
+
+      alert(data)
+       
+     
+  } catch (error) {
+      alert(error)
+  }
+}
+
+formul.addEventListener('submit', consultarPais);
+button.addEventListener('click', consultarAPI )
