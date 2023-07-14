@@ -55,10 +55,13 @@ const consultarAPI = async (e) => {
       const data = await resulta.text()
 
       alert(data)
+
+      console.log(data)
        
      
   } catch (error) {
       alert('ESTO NO ES METODO GET' + error)
+      console.log(error)
   }
 }
 
