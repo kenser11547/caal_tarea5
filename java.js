@@ -48,7 +48,6 @@ const consultarAPI = async (e) => {
   const config = {
       method : 'GET'
   }
-
   try {
       // CONSULTA A LA API
       const resulta = await fetch(url, config);   
@@ -59,7 +58,7 @@ const consultarAPI = async (e) => {
        
      
   } catch (error) {
-      alert(error)
+      alert('ESTO NO ES METODO GET' + error)
   }
 }
 
