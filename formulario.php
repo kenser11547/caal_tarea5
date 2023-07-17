@@ -27,7 +27,7 @@
     <title>CONSULTA FETCH</title>
 </head>
 <body>
-    <h1>CONSULTAR EL PAIS</h1>
+    <h1>BUSCAR INFORMACION DE UN PAIS</h1>
     <table border="1px solid">
         <thead>
             <tr>
